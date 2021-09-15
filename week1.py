@@ -80,3 +80,47 @@
 
 # Tuples.........
 # They are immutable sequences of objects
+
+# indeing Tuples
+
+# T = (1,2,3,4)
+# print(T[1])
+#
+# # Packing and unpacking Tuples
+# x = 5
+# y = 10
+# cordinate = (x,y)
+#
+# (c1,c2) = cordinate
+# print(type(c1))
+#
+# # Using tuples to loop
+# cordinates = [(0,0),(1,2),(2,4),(3,6)]
+#
+# for x,y in cordinates:
+#     print(x,y)
+
+# Constructing a one value tuple
+
+# t1 = (2,)
+# print(type(t1))
+# t2 = (2)
+# print(type(t2)) # Output is an integer
+#
+# x = (1,2,3)
+# print(x.count(3))
+# print(sum(x)
+
+# Ranges.....
+# ranges are immutable sequences of integers
+# range(start, stop, step)
+
+a = list(range(5))
+print(a)
+
+b = range(1,6) # Range starts at 1 and ends at 5
+for number in b:
+    print(number)
+
+c = range(0,11,2)
+print(list(c))
