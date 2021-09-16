@@ -115,12 +115,74 @@
 # ranges are immutable sequences of integers
 # range(start, stop, step)
 
-a = list(range(5))
-print(a)
+# a = list(range(5))
+# print(a)
+#
+# b = range(1,6) # Range starts at 1 and ends at 5
+# for number in b:
+#     print(number)
+#
+# c = range(0,11,2)
+# print(list(c))
 
-b = range(1,6) # Range starts at 1 and ends at 5
-for number in b:
-    print(number)
+# Sets.........
+# sets are unordered collections of distinct hashable objects
+# They can be used for immubtable objects like numbers and strings but not for
+# mutable objects like lists and dictionnaries
+# There are two types of sets: sets and frozen sets
+# The difference is that frozen sets once created are not mutable
+# sets cannot be indexed
 
-c = range(0,11,2)
-print(list(c))
+# num = set([1,2,3,3,4,5,6])
+# print(num)
+#
+# num.add(7)
+# print(num)
+#
+# num.add(7) #7 is already present do doesnt add
+# print(num)
+#
+# # Intersections and unions
+# vegetables = set(['carrot','potato','onion','tomato'])
+# fruits = set(['tomato','banana','orange'])
+#
+# all = vegetables | fruits
+# print(all)
+#
+# both = vegetables & fruits
+# print(both)
+
+# x = {1,2,3}
+# y = {2,3,4}
+# z = {4,5,6}
+#
+# print(x | y | z)
+#
+# # x1.difference(x2) and x1 - x2 return the set of all elements that are
+# # in x1 but not in x2
+#
+# x1 = {'foo', 'bar', 'baz'}
+# x2 = {'baz', 'qux', 'quux'}
+#
+# print(x1 - x2)
+# x3 = x1.difference(x2)
+# print(x3)
+#
+# # x1.symmetric_difference(x2) and x1 ^ x2 return the set of all
+# # elements in either x1 or x2, but not both:
+#
+# x4 = x2.symmetric_difference(x1)
+# print(x4)
+
+# The ^ operator also allows more than two sets, .symmetric_difference does not
+a = {1, 2, 3, 4, 5}
+b = {10, 2, 3, 4, 50}
+c = {1, 50, 100}
+print(a ^ b ^ c)
+
+# Determine whether one set is a subset of the other.
+d = {1,2,3,4}
+e = {1,2,3,4,5,6}
+print(d.issubset(e))
+
+# More set commands on https://realpython.com/python-sets/
