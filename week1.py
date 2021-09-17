@@ -178,15 +178,15 @@
 # print(x4)
 
 # The ^ operator also allows more than two sets, .symmetric_difference does not
-a = {1, 2, 3, 4, 5}
-b = {10, 2, 3, 4, 50}
-c = {1, 50, 100}
-print(a ^ b ^ c)
-
-# Determine whether one set is a subset of the other.
-d = {1,2,3,4}
-e = {1,2,3,4,5,6}
-print(d.issubset(e))
+# a = {1, 2, 3, 4, 5}
+# b = {10, 2, 3, 4, 50}
+# c = {1, 50, 100}
+# print(a ^ b ^ c)
+#
+# # Determine whether one set is a subset of the other.
+# d = {1,2,3,4}
+# e = {1,2,3,4,5,6}
+# print(d.issubset(e))
 
 # More set commands on https://realpython.com/python-sets/
 
@@ -196,3 +196,86 @@ print(d.issubset(e))
 # ...........................................................................
 # Part3
 # ...........................................................................
+
+# Dynamic typing...
+# For more explainations, watch Video 1.3.1: Dynamic Typing
+
+
+# l1 = [2,3,4]
+# l2 = l1
+# print(l1,l2)
+# l1[0] = 24
+# print(l1,l2)
+# # Because python uses dynamic typing, both variables l1 and l2, reference the
+# # same object
+#
+# x = 7
+# y = x
+# print(x,y)
+# y = y -1
+# print(x,y)
+#Because 3 is an immutable object, y must refer to a new object when reduced
+# by 1, leaving the value of x unchanged.
+
+# # Each object in Python has a type, value, and an identity
+# # Mutable objects in Python can be identical in content
+# # and yet be actually different objects.
+#
+# L = [1,2,3]
+# M = [1,2,3]
+# print(L == M)
+# print(L is M)
+#
+# # The id function corresponds to the object's location in memory
+#
+# print(id(L))
+# print(id(M))
+
+# By typing list parentheses L, Python will create a completely new object
+# or by using M = L[:]
+# L = [1,2,3]
+# M = list(L)
+# M[0] = 4
+# print(L,M)
+
+# Copies...
+# There are two types of copies that are available.
+# A shallow copy constructs a new compound object
+# and then insert its references into it to the original object.
+# In contrast, a deep copy constructs a new compound object and then
+# recursively inserts copies into it of the original objects.
+
+# import copy
+# L = [1,2,3]
+# x = copy.copy(L)
+# y = copy.deepcopy(L)
+# print(L,x,y)
+# L[0] = 4
+# print(L,x,y)
+
+# List comprehensions....
+# More info on https://www.w3schools.com/python/python_lists_comprehension.asp
+# conducting operations on all members of a lists
+
+# 1st way - using loops
+# numbers = range(10)
+# squares = list()
+#
+# for number in numbers:
+#     square = number**2
+#     squares.append(square)
+# print(squares)
+#
+# # 2nd way - list comprehension method
+#
+# squares2 = [number**2 for number in numbers]
+# print(squares2)
+#
+# fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+# newlist = [fruit for fruit in fruits if fruit == "mango"]
+# print(newlist)
+
+# sum the odd numbers from 0 to 9
+numbers = range(10)
+x = sum([number for number in numbers if number%2 != 0])
+print(x)
