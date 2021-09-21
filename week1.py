@@ -276,6 +276,179 @@
 # print(newlist)
 
 # sum the odd numbers from 0 to 9
-numbers = range(10)
-x = sum([number for number in numbers if number%2 != 0])
-print(x)
+# numbers = range(10)
+# x = sum([number for number in numbers if number%2 != 0])
+# print(x)
+
+# limit = 10
+# numbers = range(2,limit+1)
+# primes = list()
+# for num in numbers:
+#     test_num = range(2,num)
+#     for i in test_num:
+#         if num%i == 0:
+#             continue
+# print(primes)
+
+# l1 = range(3)
+# l2 = range(10,31,10)
+#
+# for i in l1:
+#     for j in l2:
+#         if i==2 and j==20:
+#             print('Break')
+#             break
+#         print(i,j)
+
+# l1 = [1, 2, 3]
+# l2 = [10, 20, 30]
+# for i in l1:
+#     print('Start outer loop')
+#
+#     for j in l2:
+#         print('--', i, j)
+#         if i == 2 and j == 20:
+#             print('-- BREAK inner loop')
+#             break
+#     else:
+#         print('-- Finish inner loop without BREAK')
+#         continue
+#
+#     print('BREAK outer loop')
+#     break
+
+# Files.................
+
+# Creating and looping through a file
+# F = open('output.txt','w') #'w' tells python a file is being written
+# F.write('Hello\nHow is it going\nDoes this actually work\n') #using .write() to write to the file
+# F.close()
+#
+# fopen = open('output.txt')
+# for line in fopen:
+#     line = line.rstrip()
+#     print(line)
+
+# Functions...............
+# all names created or assigned in a function are local of that function
+# and they exist only while the function runs.
+
+# def multiply(a,b):
+#     product = a * b
+#     return product
+#
+# print(multiply(3,7))
+#
+# # Using tuples to return multiple values
+#
+# def multiply_and_divide(a,b):
+#     product = a*b
+#     quotient = a/b
+#     return (product,quotient)
+#
+# print(multiply_and_divide(2,4))
+#
+# # Functions can also be renamed and used
+#
+# def add(a,b):
+#     mysum = a + b
+#     return mysum
+#
+# print(add(2,3))
+#
+# newadd = add
+# print(newadd(5,7))
+
+# Functions on mutable objects
+
+# def mylist(a):
+#     a[0] /= 2
+#     return(a)
+#
+# b = mylist([4,6,8])
+# print(b)
+
+# More function examples......
+
+# unique list function
+
+# def unique(l1,l2):
+#     union = []
+#     for x in l1:
+#         if x not in l2:
+#             union.append(x)
+#     for y in l2:
+#         if y not in l1:
+#             union.append(y)
+#     return union
+#
+# print(unique([1,2,3,4],[3,4,5,6]))
+
+# Generate a random password
+
+# import random
+#
+# def password(length):
+#     pw = str()
+#     characters = 'abcdefghijklmnopqrestuvwxyz' + '0123456789'
+#     # this will returnone of the characters chosen at random
+#     for i in range(length):
+#         pw += random.choice(characters)
+#     return pw
+# print(password(10))
+
+# Factroial funcion
+
+# def factorial(n):
+#     if n == 0:
+#         return 1
+#     else:
+#     	N = 1
+#     for i in range(1, n+1):
+#         N *= i
+#     return(N)
+#
+# print(factorial(5))
+
+# Working towards monte carlo method for pi..........
+
+# Distance between 2 points
+
+def distance(x, y):
+    length = math.sqrt( ((y[0])**2 - (x[0])**2) + (y[1]**2 - x[1]**2) )
+    return(length)
+
+distance((0,0),(1,1))
+
+# Determine if point lies in circle
+
+# method 1
+def in_circle(x, origin = [0,0]):
+    if x[0]**2 + x[1]**2 <= 1:
+        return True
+    else:
+        return False
+
+in_circle((1,1),)
+
+# method 2 - using distance function made earlier
+def in_circle(x, origin = [0,0]):
+    if distance( (x[0],x[1]) , tuple(origin) )  <= 1:
+        return True
+    else: return False
+
+in_circle((1,1),)
+
+# Create a list inside of R=10000 booleans that determines whether or not
+# a point falls within the unit circle centered at (0,0)
+R = 1000
+inside = list()
+for i in range(1,R+1):
+    x = rand()
+    y = rand()
+    inside.append( in_circle((x,y),) )
+monte_carlo = inside.count(True)/R
+print(monte_carlo)
+
+difference = monte_carlo - math.pi/4
+print(difference)
