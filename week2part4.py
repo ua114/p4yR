@@ -104,9 +104,23 @@ import time
 #
 # X = np.random.randint(1,7,(100000,10))
 # Y = np.sum(X, axis=1)
-# 
+#
 # end_time_np = time.process_time()
 #
 # np_time = end_time_np - start_time_np
 #
 # print('Difference in time is: ', (random_time - np_time)/np_time * 100,'%' )
+
+
+# Random Walks...........................
+# position at anytime is x0 + sum of random displacements (delx)
+# x1 = x0 + del(x1)
+# x2 = x1 + del(x2) = x0 + del(x1) + del(x2)
+
+# Displacements in x and y
+X_0 = np.array([[0],[0]]) #starting position (0,0)
+delta_X = np.random.normal(0,1,(2,5))
+X = np.concatenate((X_0, np.cumsum(delta_X, axis=1)), axis =1)
+
+plt.plot(X[0], X[1], "ro-")
+plt.show()
