@@ -118,9 +118,9 @@ import time
 # x2 = x1 + del(x2) = x0 + del(x1) + del(x2)
 
 # Displacements in x and y
-X_0 = np.array([[0],[0]]) #starting position (0,0)
-delta_X = np.random.normal(0,1,(2,5))
-X = np.concatenate((X_0, np.cumsum(delta_X, axis=1)), axis =1)
-
-plt.plot(X[0], X[1], "ro-")
-plt.show()
+# X_0 = np.array([[0],[0]]) #starting position (0,0)
+# delta_X = np.random.normal(0,1,(2,5000000))
+# X = np.concatenate((X_0, np.cumsum(delta_X, axis=1)), axis =1)
+#
+# plt.plot(X[0], X[1], "yo-",markersize=0.01)
+# plt.show()
